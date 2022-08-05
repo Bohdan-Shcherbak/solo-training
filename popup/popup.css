@@ -357,6 +357,10 @@ h3{
     height: 54px;
     border: none;
     border-radius: 10px;
+    padding: 10px;
+    overflow: none;
+    outline: none;
+
 }
 
 .form__Password{
