@@ -154,6 +154,23 @@ p{
     transition: all 0.8s ease 0s;
 }
 
+/* Если делать через цсс, то попап получает класс таргет
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup:target .popup__content{
+    transform: translate(0px, 0px); 
+    возвращается на место
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+
+    opacity: 1;
+
+} */
+
+/* Если через джс, то таргет заменяется классом специальным сделаным вручную */
+
 .popup.open{
     opacity: 1;
     visibility: visible;
@@ -176,8 +193,10 @@ p{
 
 .popup__area{
     position: absolute;
+    width: 100%;
     height: 100%;
     top: 0;
+    left: 0;
 }
 
 
@@ -187,6 +206,7 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px 10px;
 }
 
 .popup__content{
@@ -198,11 +218,24 @@ p{
     display: flex;
     flex-direction: column;
     padding: 25px 45px 23px 45px;
+    color: #000;
+
+    transition: all 0.8s ease 0s;/*появляется попап*/
+    /* transform: translate(0px, -100%); */
+    /*съезжает в низ*/
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+    /* съезжает в низпод углом */
+    opacity: 0;
 
 }
 
 .popup__close{
     position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
 }
 
 h3{

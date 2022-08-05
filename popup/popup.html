@@ -51,7 +51,7 @@
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab facilis dolor nobis, omnis culpa veniam consectetur officia enim voluptas accusantium ipsa optio sint earum reprehenderit totam eveniet et aliquam illum.
                         Odit ipsam totam modi? Dolorem molestiae debitis eos cumque recusandae ullam dolor suscipit eaque, voluptatum odio quos minus. Ducimus voluptatem pariatur qui aliquam ratione in voluptates aperiam, reiciendis iusto id?
                         Nesciunt dolor at recusandae, ipsa nisi quam cum numquam vitae itaque atque iure, accusamus doloremque cumque odio autem sunt adipisci. Quod explicabo fugit totam corrupti labore accusantium, voluptate itaque? Amet?</p>
-                        <p><a href="#popup_2" class="popup-link">Попап№2</a>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat perferendis veniam doloribus alias quas tempora, corporis, odit, nulla corrupti debitis cupiditate iure! Corrupti eum laborum rem esse sed et vel!
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat perferendis veniam doloribus alias quas tempora, corporis, odit, nulla corrupti debitis cupiditate iure! Corrupti eum laborum rem esse sed et vel!
                         Corrupti illum porro qui explicabo excepturi recusandae. Tenetur neque molestias, sint natus delectus commodi repellendus quis fugiat necessitatibus. Nesciunt rem recusandae repudiandae quo unde optio. Necessitatibus temporibus distinctio eius id!</p>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab facilis dolor nobis, omnis culpa veniam consectetur officia enim voluptas accusantium ipsa optio sint earum reprehenderit totam eveniet et aliquam illum.
                         Odit ipsam totam modi? Dolorem molestiae debitis eos cumque recusandae ullam dolor suscipit eaque, voluptatum odio quos minus. Ducimus voluptatem pariatur qui aliquam ratione in voluptates aperiam, reiciendis iusto id?
@@ -74,9 +74,10 @@
         </div>
     </div>
     <div id="popup" class="popup">
+                <!-- <a href="#header" class="popup__area"></a> - при нажатии вокруг окна, закрывается -->
         <div class="popup__body">
             <div class="popup__content">
-                <a href="#" class="popup__close close-popup">X</a>
+                <a href="#header" class="popup__close close-popup">X</a>
                 <h3>Log in to your account</h3>
                 <form action="#">
                     <button class="form__facebook"><a href="#"><img src="./formIcon/LogoFacebook.svg" alt=""><span>Sign In with Facebook</span></a></button>
@@ -98,11 +99,36 @@
                     <div class="form__line">
                     </div>
 
-                    <p class="form__register">Don’t have an account? <a href="#">Register</a></p>
+                </form>
+                <p class="form__register">Don’t have an account? <a href="#popup_2" class="popup-link">Register</a></p>
+
+            </div>
+        </div>
+    </div>
+    <div id = "popup_2" class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="#header" class="popup__close close-popup">X</a>
+                <h3>Create account</h3>
+                <form action="#">
+                    <div class="form__sign">
+                        <p class="form__E-mail">E-mail</p>
+                        <input class="form__input" type="text" name="email">
+                        
+                        <p class="form__Password">Password</p>
+                        <input class="form__input" type="password" name="password">
+
+                        <button class="form__SignIn"><a href="#">Sign Un</a></button>
+                    </div>
+                    <div class="form__line">
+                    </div>
+
+                    <p class="form__register">Already have an account& <a href="#popup" class="popup-link">Log in</a></p>
                 </form>
             </div>
         </div>
-        <script src="./popup.js"></script>
     </div>
+    <script src="./popup.js"></script>
+
 </body>
 </html>
