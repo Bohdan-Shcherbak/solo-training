@@ -1,0 +1,21 @@
+body{
+	padding: 0;
+	margin: 0;
+	color: #000;
+	font-size: 15px;
+	font-family: serif;
+	font-weight: normal;
+}
+
+.container{
+	width: 1100px;
+	margin: opx;
+}
+
+.btn:hover{
+	background: yellow;
+}
+
+.btn:active{
+	background: black;
+}
