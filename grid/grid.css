@@ -1,0 +1,192 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body {
+	height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #333;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+} 
+/* 3правила грида
+1 любой строчный элемент, который стал ячейкой грида становится блочным
+2 пробелы не схлопываются не объеденяются, т к 1 блок это отдельная ячейка
+3 паддинги в процентах лучше не задавать
+4 маржин ауто даёт выравнивание элементов сетки */
+.grid{
+    /* он как блок, на всю ширину родителя */
+    display: grid;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #794f45;
+    margin:0px,0px,20px,0px;
+}
+
+.grid-inline{
+    /* как строчный элемент такого же размера как информация в нем */
+    display: inline-grid;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #77608d;
+}
+
+.grid__body{
+    display: grid;
+    /* grid-template-columns: 30% 150px 50%; */
+    /* grid-template-columns: 1fr 2fr 1fr; */
+    /* тоже самое что  33.333,33.333,33.333*/
+    /* grid-template-columns: 200px minmax(150px,1fr) 200px; */
+    /* minmax первое минимальное, второе макс 1fr не может быть мин ,auto максимальная ширина контента берется*/
+    /* grid-template-rows: 50% 50%; */
+    /* fit-content(100) максимальная ширина контента */
+    /* короткая запись */
+    grid-template: repeat(3,1fr) / 1fr 1fr;
+    grid-template-columns: repeat(3,1fr);
+    /* три колонки размером 1фр */
+    grid-template-rows: 1fr 1fr;
+    
+}
+.grid__item{
+    text-align: center;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 30px;
+}
+
+/* имена областей */
+
+.grid-wrapper{
+    display: grid;
+    grid-template: 
+    [start] 'header header' 100px [row2]
+    [row2] 'side content' 1fr [row-end] / 150px fr;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:'header header'
+                        'side content';
+                        /* схематически нарисовали и задали для как переменные назвали */
+}
+
+.grid-header,
+.grid-aside,
+.grid-content{
+    padding: 30px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    margin: 0px,0px,15px,0px;
+}
+
+.grid-header{
+    grid-area: header;
+}
+.grid-aside{
+    grid-area: side;
+    /* название переменной */
+}
+
+.grid-content{
+    grid-area: content;
+}
+
+.grid__auto{
+    display: grid;
+    grid-template: 1fr 1fr / repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    /* 7ряд не явный, а это размер неявного */
+    grid-auto-columns: 200px;
+}
+
+.grid__auto__item{
+    text-align: center;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    font-size: 30px;
+}
+
+/* размещениеэлементов с помощью линий сетки */
+.grid__bodyy{
+    height: 500px;
+    display: grid;
+    /* grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr); */
+    /*  row2 и  col2 названия линий*/
+grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+/* выравнивание строки и колонок, тоесть икс и икрик */
+justify-items: start;
+align-items: start;
+/* расстояние между ячейками */
+row-gap: 0px;
+column-gap: 0px;
+/* gap:20px и для строк и для стольцов */
+}
+.grid__item1{
+    /* auto по умолчанию */
+    /* расширяется ячейка занимая следующую */
+/* grid-row-start: 1;
+grid-row-end: 3;
+grid-column-start: 1;
+grid-column-end: 3; */
+/* если задть начальную строку другую или столбец, и не задавать конечную, то она сместиться*/
+/* grid-row-start: span 2; */
+/* будет занимать 2 ряда */
+/* grid-column-start: 1;
+grid-column-end: 3; */
+/* используется название строки */
+/* grid-row-start: row2; */
+/* также можно исполтзовать короткую запись */
+/* grid-row: 1/3; */
+/* or */
+grid-row: start/row-end;
+grid-column: 1/2;
+
+background-color: red;
+border: 2px dashed yellow;
+
+}
+
+.grid__item2{    border: 2px dashed yellow;
+order: 5
+/* становится на место пятого */
+}
+.grid__item3{    border: 2px dashed yellow;
+    /* нужны для личного выравнивания ячейки */
+align-self: start;
+justify-self: start;
+/* place-self обїеденяет 2 значения*/
+}
+.grid__item4{    border: 2px dashed yellow;
+
+}
+.grid__item5{    border: 2px dashed yellow;
+
+}
+.grid__item6{
+    border: 2px dashed yellow;
+
+}
