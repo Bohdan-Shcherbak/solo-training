@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+img{
+	display:block;
+	max-width: 100%;
+	object-fit: cover;
+	object-position: center;
+	height:auto;
+
+}
+
+.container6{
+  	margin:0 auto;
+		outline: 1px solid red;
+	padding: 90px 0px;
+	height: auto;
+	max-width: 1300px;
+	padding: 25px;
+
+}
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+h2{
+	font-size: 45px;
+	color: #061e37;
+	font-weight: 600;
+	font-family: "Raleway";
+	text-align: center;
+	outline: 1px solid red;
+	margin-top: 75px;
+}
+
+.subtitle{
+	width: 565px;
+	font-size: 15px;
+	/* line-height: 25px; */
+	color: #b0bec5;
+	font-weight: 400;
+	font-family: "Raleway";
+	text-align: center;
+	outline: 1px solid red;
+	align-items: center;
+	/* justify-content: center; */
+display: flex;
+
+}
+
+ /* автоширина */
+.image-slider{
+    width:auto; 
+	outline: 1px solid green;
+	margin-top: 80px;
+}
+
+.image-slider__wrapper{
+	width:auto; 
+	height: auto;
+	padding:52px 0px;
+	outline: 1px solid rgb(49, 0, 128);
+
+}
+
+
+.image-slider__slide img{
+	width:100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.image-slider__image {
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+
+
+.swiper-slide {
+	opacity:0.5;
+	transition: 0.5s;
+	width: auto;
+	height: auto;
+}
+
+.swiper-slide-active{
+	opacity:1;
+	width: auto;
+	height: auto;
+	outline: 1px solid rgb(49, 0, 128);
+
+}
+
+ .swiper-slide-active img{
+	transform: scale(2.0);
+	transition: 0.5s;
+	box-shadow: 0px 0px 0px 1px #b0bec5;  
+	border-radius: 50%;
+	border: 10px solid rgb(190, 22, 22);  
+
+}   
+
+/* .swiper-slide_modificate-active{
+	filter: drop-shadow(5px 5px 5px green);
+background-color: rgb(160, 34, 34);
+width: 100px;
+	height: 100px;
+} */
+/* .swiper-slide-active:first-child::after{
+	background-color: blue;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+
+} */
+
+.text-slider{
+	margin-top: 50px;
+}
+
+
+ 
+.text__slider_text{
+	text-align: center;
+}
+
+
+

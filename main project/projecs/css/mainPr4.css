@@ -1,0 +1,115 @@
+.container4{
+	min-height: 877px;
+	width:800px;
+	margin:0 auto;
+	height: auto;
+	border: 1px solid yellow;
+}
+
+h2{
+	text-align: center;	
+	font-size: 45px;
+	color: #061e37;
+	font-weight: 600;
+	font-family: "Raleway";
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.Lorem{
+	font-size: 15px;
+	line-height: 25px;
+	color: #b0bec5;
+	font-weight: 400;
+	font-family: "Raleway";
+	text-align: center;
+	width: 560px;
+	height: 63px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+.labels{
+	margin-top: 50px;
+	display: block;
+	margin-bottom: 100px;
+}
+
+.label{
+	padding-top: 20px;
+	border-radius: 1px;
+	box-shadow:  0px 2px 2.5px rgba(0,0,0,0.13);
+
+}
+
+.er{	
+	align-items: center;
+	text-align: center;
+  	display: flex;
+	height: 50px;
+	width: 117px;
+	float: left;
+  	margin-left: 25px;
+
+}
+
+.er p{
+	margin-left: 25px;
+	text-transform: uppercase;
+
+}
+
+.er a{
+	text-decoration: none;
+}
+.btn {
+	display: block;
+	cursor: pointer;
+	height: 50px;
+	min-width:  780px;
+}
+
+.trendins{
+	float: left;
+}
+
+#t02{
+	margin-top: 2px;
+}
+
+.arrow{
+	height: 100%;
+	display: flex;
+	align-items: center;
+  	float: right;
+  	padding-right: 25px;
+}
+	
+.text{
+	max-width: 100%;
+	height: 200px;
+	padding-top: 10px;
+}
+
+.text,
+input[type="checkbox"] {
+	display: none;
+	color: #000;			
+}
+
+input[type="checkbox"]:checked ~ .text {
+	display: block;
+}
+
+.dropping {
+	float:left;
+	width: 250px;
+	height: 154px;
+	margin-left: 25px;
+	padding-right: 25px;
+}
+
+.Statictics_text{
+	text-align: left;
+}

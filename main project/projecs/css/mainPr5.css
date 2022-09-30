@@ -1,0 +1,211 @@
+body{
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.section5{
+  width: 100%;
+  background: url(../img/Rectangle.png) no-repeat center top;
+  position: relative;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+
+.section5::before{
+  background-image: 
+  linear-gradient(-53deg, #00b7d3 0%, #1ce8b5 100%);
+  opacity: 0.9;
+  content: '';
+  display: block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.container5{
+  z-index: 5;
+  max-width:1250px;
+  margin:0 auto;
+  display: flex;
+  position: relative;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  height: 100%;
+  gap: 140px;
+  td
+}
+
+.customers{
+  display: block;
+  width: 50%;
+  padding-top: 90px;
+
+}
+
+.customers span{
+  font-size: 45px;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Raleway";
+  text-align: left;
+  max-width: 440px;
+  text-align: left;
+
+}
+
+.customers p{
+  max-width: 515px;
+  font-size: 15px;
+  line-height: 25px;
+  color: #ffffff;
+  font-weight: 600;
+  font-family: "Raleway";
+  text-align: left;
+}
+
+.vertical_slider{
+  width: 50%;
+  position: relative;
+  max-height: 484px;
+}
+
+
+.vertical_slider__item{
+  display: flex;
+  padding-top: 45px;
+  padding-bottom: 46px;
+  max-height: 163px;
+}
+
+.jogh{
+  margin: auto 0;
+  float: left;
+}
+
+
+
+.vertical_slider__text{
+  display: block;
+  width: 650px;
+  background-color: #fff;
+  margin-left: 40px;
+  border-radius: 5px;
+  float: right;
+}
+
+.vertical_slider__text span{
+  margin-right: 50px;
+  margin-left: 30px;
+  margin-top: 20px;
+  text-align: left;
+  display: block;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  font-family: "Raleway";
+  margin-bottom: 10px;
+}
+
+.vertical_slider__text p{
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+  font-family: "Raleway";
+}
+
+
+
+
+
+/*основніе стили*/
+
+/*сдайдер*/
+.vertical_slider .slick-slider{
+  min-width: 0;
+}
+/*ограничивающая оболочка*/
+.vertical_slider .slick-list{
+  overflow: hidden;
+}
+/*лента слайдов*/
+.vertical_slider.slick-track{
+  display: block;
+}
+
+
+
+
+/*конкретный слайдер*/
+
+.vertical_slider .slick-arrow{
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  font-size: 0;
+  width: 23px;
+  height: 15px;
+  border: none;
+cursor: pointer;
+}
+
+.vertical_slider .slick-arrow.slick-prev{
+  top: 0;
+  background:url('../img/arrow_up.svg') 0 0 /100% no-repeat;
+}
+.vertical_slider .slick-arrow.slick-next{
+  bottom: 0;
+  background:url('../img/arrow_down.svg') 0 0/100% no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+.header{
+  background-color: green;
+  height: 500px;
+  width: 500px;
+}
+
+.header__logo{
+    background-color: red;
+    height: 250px;
+  width: 250px;
+padding-top: 100px;
+}
+
+img{
+  margin-top: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+
+.re5{
+ margin-top: 500px;
+
+}
+.experiment{
+  background: red;
+ 
+  width: 200px;
+ height: 200px;
+}
+
+
