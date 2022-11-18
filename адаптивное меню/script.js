@@ -1,21 +1,21 @@
 "use strict"
 const isMobile = {
-    Android: function() {
+    Android: function () {
         return navigator.userAgent.match(/Android/i);
     },
-    BlackBerry: function() {
+    BlackBerry: function () {
         return navigator.userAgent.match(/BlackBerry/i);
     },
-    iOS: function() {
+    iOS: function () {
         return navigator.userAgent.match(/iPhone|iPad|iPod/i);
     },
-    Opera: function() {
+    Opera: function () {
         return navigator.userAgent.match(/Opera Mini/i);
     },
-    Window: function() {
+    Window: function () {
         return navigator.userAgent.match(/IEMobile/i);
     },
-    any: function() {
+    any: function () {
         return (
             isMobile.Android() ||
             isMobile.BlackBerry() ||
@@ -27,26 +27,28 @@ const isMobile = {
 // Определяет на каком устройстве открыто   ------------------------------------------
 
 if (isMobile.any()) {
+    document.body.classList.remove('_pc');
     document.body.classList.add('_touch');
 
-    let menuArrows =document.querySelectorAll('.menu__arrow');
-    if(menuArrows.length>0){
-        for (let index = 0; index < menuArrows.length; index++){
+    let menuArrows = document.querySelectorAll('.menu__arrow');
+    if (menuArrows.length > 0) {
+        for (let index = 0; index < menuArrows.length; index++) {
             const menuArrow = menuArrows[index];
-            menuArrow.addEventListener("click", function(e) {
+            menuArrow.addEventListener("click", function (e) {
                 menuArrow.parentElement.classList.toggle('_active')
             });
         }
     }
 } else {
+    document.body.classList.remove('_touch');
     document.body.classList.add('_pc');
 }
 
 // бургер
 const iconMenu = document.querySelector('menu__icon');
-if (iconMenu){
+if (iconMenu) {
     const menuBody = document.querySelector('menu__body');
-    iconMenu.addEventListener("click", function(e) {
+    iconMenu.addEventListener("click", function (e) {
         document.body.classList.toggle('_lock')
         iconMenu.classList.toggle('_active');
         menuBody.classList.toggle('_active');
