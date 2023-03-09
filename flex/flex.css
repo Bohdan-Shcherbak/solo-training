@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    /* overflow-x: hidden; */
+    height: 100%;
+    line-height: 1;
+}
+
+.block__row {
+    display: flex;
+    border: 20px solid #ece89d;
+    margin-bottom: 20px;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+
+
+    flex-direction: row;
+}
+
+
+.block__column {
+    border: 20px solid #5e5373;
+    /* базовый размер флекс-елемента */
+    /* flex-basis: auto; */
+    /* flex-basis: 500px; */
+    /* возможность увеличиваться в размере */
+    /* 0 - нельзя, 1 - можно */
+    /* flex-grow: 1; */
+    /* возможность уменьшаться в размере */
+    /* 1 - можно уменьгшаться */
+    /* flex-shrink: 1; */
+    /* grow,shrink,basis */
+    /* нельзя увеличиваться, можно уменьшаться иразмер колонки автоматический */
+    /* flex: 0 1 33.333%; */
+}
+
+.block__column_1 {
+    /* align-self: flex-start; */
+    /* order: 3; */
+}
+
+.block__column_2 {
+    /* align-self: center; */
+    /* order: 2; */
+
+}
+
+.block__column_3 {
+    /* align-self: flex-start; */
+    /* order: 1; */
+
+}
+
+
+
+.block__item {
+    background-color: #18b5a4;
+    padding: 20px 50px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
