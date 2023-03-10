@@ -1,0 +1,28 @@
+flexboxfoggy - гра по флексах
+flexbox zombies - гра покруче на флексах
+cssgridgarden - гра по грідах
+caniuse.com - Перевірка цсс властивостей на кроссбраузерність (в яких браузерах буде робити і не буде)
+caninclude - перевірка вкладеності, чи можна тег в тег хасунути
+transfonter - конвертер шрифтів у вебформат
+css clap-path maker - https://bennettfeely.com/clippy/- генератор цсс коду, для того шоб зробити необхідну фігуру
+https://animista.net/ - готові анімації та їх генератор.
+https://neumorphism.io/ - генератор 3д блоку
+https://css.glass/ - ефект скла
+https://cubic-bezier.com/ - більш продвинута анімація для більш точної настройки
+https://9elements.github.io/fancy-border-radius/ - генератор різноманітного радіусу
+https://cssgradient.io/ - генератор градіенту
+http://www.cssfiltergenerator.com/ - генератор фільтру на картинку, обробка картинки
+https://cssbud.com/css-generator/ - генератор грід сітки
+https://cssgrid-generator.netlify.app/ - генератор тіней
+https://tinypng.com/ - оптимізує зображення
+https://cloudconvert.com/webp-converter - конвертатор забраження в інший формат
+https://www.blobmaker.app/ - генератор свг картинки
+https://getwaves.io/ - генератор хвиль
+
+
+
+
+
+
+
+

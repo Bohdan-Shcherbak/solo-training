@@ -94,3 +94,11 @@ body {
     font-weight: 700;
     text-align: center;
 }
+
+
+/* flex-flow:column wrap; */
+/* теж саме що flex-direction + flex-wrap */
+
+/* але align-content - має ті ж самі значення що і justify-content */
+/* Це може збивати з пантелику, але align-content визначає інтервал поміж рядками, в той час як align-items визначає, як елементи буде вирівняно в контейнері в цілому. */
+/* Коли у вас лише один рядок, align-content не має ніякого ефекту. */
