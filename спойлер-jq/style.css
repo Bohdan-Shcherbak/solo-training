@@ -1,0 +1,55 @@
+.wrapper {
+    height: 100%;
+    padding: 50px;
+}
+
+.block__item {
+    margin-bottom: 20px;
+}
+
+.block__title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.block__title::before,
+.block__title::after {
+    content: '';
+    width: 10px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 8px;
+    transition: all 0.3s ease 0s;
+}
+
+.block__title::before {
+    transform: rotate(40deg);
+    left: 0;
+}
+
+.block__title::after {
+    transform: rotate(-40deg);
+    left: 8px;
+}
+
+.block__title.active::before,
+.block__title.active::after {
+    background-color: red;
+}
+
+.block__title.active::before {
+    transform: rotate(-40deg);
+}
+
+.block__title.active::after {
+    transform: rotate(40deg);
+}
+
+.block__text {
+    padding-top: 10px;
+    display: none;
+}
