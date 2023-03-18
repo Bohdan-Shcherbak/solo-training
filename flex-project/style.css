@@ -282,20 +282,22 @@ body {
     display: flex;
     border: 1px solid #000;
     gap: 60px;
-    justify-content: space-around;
+    /* column-gap: 60px; */
+    justify-content: center;
+    /* padding: 0 60px; */
+    flex-wrap: wrap;
 }
 
 .test-block1 {
-    flex: 0 1 50%;
+    flex: 1 1 50%;
     min-height: 500px;
     background-color: yellow;
 
 }
 
 .test-block2 {
-    flex: 0 1 50%;
     min-height: 500px;
     background-color: red;
-    flex: 0 1 50%;
+    flex: 1 1 50%;
 
 }
