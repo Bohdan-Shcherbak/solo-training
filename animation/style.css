@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    /* overflow-x: hidden; */
+    height: 100%;
+    line-height: 1;
+    background-color: #000;
+}
+
+.wrapper {
+    padding: 50px;
+}
+
+.content__circle {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    left: 0;
+    /* зв'язує об'єкт з анімацією none-відключити анімацію,починаеться з початку*/
+    animation-name: white-circle;
+    /* час, за який анімація пройде від 0 до 100% */
+    animation-duration: 2s;
+    /* сценарій розвитку анімації між ключовими кадрами */
+    animation-timing-function: linear;
+    /* кількість повтору ключових кадрів, кількість разів повтору анімації */
+    animation-iteration-count: infinite;
+    /* можливість змінити напрям, або щоб ходило у 2 напрямках */
+    animation-direction: alternate-reverse;
+    /* можливість запускати та зупиняти анімацію по події */
+    /* animation-play-state: running; */
+    /* затримка перед початком анімації */
+    animation-delay: 2s;
+    /* що буде з об'єктом після  завершення анімації forwards - залишає об'єект на останній точці анімаціі 100% */
+    animation-fill-mode: forwards;
+    /* скорочена версія */
+    /* animation: white-circle 2s linear infinite alternate-reverse 0s forwards; */
+}
+
+.content:hover .content__circle {
+    animation-play-state: paused;
+
+}
+
+@keyframes white-circle {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        border-radius: 100%;
+    }
+
+    100% {
+        left: 500px;
+    }
+}
