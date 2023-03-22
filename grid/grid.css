@@ -1,22 +1,26 @@
 *,
 *::before,
 *::after {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
 }
+
 a {
     text-decoration: none;
 }
+
 ul,
 ol,
 li {
     list-style: none;
 }
+
 img {
     vertical-align: top;
 }
+
 h1,
 h2,
 h3,
@@ -26,30 +30,32 @@ h6 {
     font-weight: inherit;
     font-size: inherit;
 }
+
 html,
 body {
-	height: 100%;
+    height: 100%;
     line-height: 1;
     font-size: 14px;
     background-color: #333;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: #fff;
-} 
-/* 3правила грида
+}
+
+/* 3 правила грида
 1 любой строчный элемент, который стал ячейкой грида становится блочным
 2 пробелы не схлопываются не объеденяются, т к 1 блок это отдельная ячейка
 3 паддинги в процентах лучше не задавать
 4 маржин ауто даёт выравнивание элементов сетки */
-.grid{
+.grid {
     /* он как блок, на всю ширину родителя */
     display: grid;
     font-size: 30px;
     padding: 20px;
     background-color: #794f45;
-    margin:0px,0px,20px,0px;
+    margin: 0px, 0px, 20px, 0px;
 }
 
-.grid-inline{
+.grid-inline {
     /* как строчный элемент такого же размера как информация в нем */
     display: inline-grid;
     font-size: 30px;
@@ -57,23 +63,38 @@ body {
     background-color: #77608d;
 }
 
-.grid__body{
+.grid__body {
     display: grid;
+    /* керує колонками */
     /* grid-template-columns: 30% 150px 50%; */
-    /* grid-template-columns: 1fr 2fr 1fr; */
-    /* тоже самое что  33.333,33.333,33.333*/
-    /* grid-template-columns: 200px minmax(150px,1fr) 200px; */
-    /* minmax первое минимальное, второе макс 1fr не может быть мин ,auto максимальная ширина контента берется*/
+    /* керує стовбцями */
     /* grid-template-rows: 50% 50%; */
-    /* fit-content(100) максимальная ширина контента */
-    /* короткая запись */
-    grid-template: repeat(3,1fr) / 1fr 1fr;
-    grid-template-columns: repeat(3,1fr);
-    /* три колонки размером 1фр */
+    /* ................... */
+    /* fr - одна частина, яка займає максимум ширини */
+    /* тобто перша колонка займає 1 частину грід контейнера, друга у 2 рази більше і третя 1 частину */
+    /* grid-template-columns: 1fr 2fr 1fr; - тобто 25% 50% 25% */
+    /* grid-template-columns: 1fr 1fr 1fr - теж саме що  33.333,33.333,33.333*/
+    /* ................... */
+    /* обмежує колонки, тобто надає максимальну та мінімальну ширину */
+    /* grid-template-columns: 200px minmax(150px,1fr) 200px; */
+    /* minmax перше мінімальне, друге макс 1fr не може бути мін ,auto максимальна ширина контенту*/
+    /* ...................... */
+    /* fit-content(100px) максимальна ширина контенту.Тобто обмежу максимальну ширину, але до цього значення робить ауто, тобіш по контенту */
+    /* ..................... */
+    /*  repeat додає одразу потрібну кількість колонок потрібнох ширини, або рядків*/
+    /* теж саме що  grid-template-columns: 1fr 1fr 1fr*/
+    /* grid-template-columns: repeat(3, 1fr) */
+    /* .............................. */
+    /* короткий запис */
+    /* спочатку ряди, потім колонки  */
+    grid-template: repeat(2, 1fr) / 1fr 1fr 1fr;
+    /* теж саме що */
     grid-template-rows: 1fr 1fr;
-    
+    grid-template-columns: repeat(3, 1fr);
+
 }
-.grid__item{
+
+.grid__item {
     text-align: center;
     border: 2px dashed rgba(255, 255, 255, 0.2);
     padding: 30px;
@@ -81,47 +102,67 @@ body {
 
 /* имена областей */
 
-.grid-wrapper{
+.grid-wrapper {
     display: grid;
-    grid-template: 
-    [start] 'header header' 100px [row2]
-    [row2] 'side content' 1fr [row-end] / 150px fr;
+    /* ........................................ */
+    /* скорочений запис з іменами областей. 
+    стартуємо область, пишемо назви, в нашому випадку хеадер займає 2 колонки, пишемо як в ареа,
+    пишемо висоту ряда, тобіш grid-template-rows, який займає 100px
+    потім закриваємо ряд і відкриваємо новий 
+    пишемо назви змінної як в ареас, тобто side content, ряд яких займає 1fr
+    row-end зікінсує запис областей рядів
+    далі пишемо колонки, а тобто 
+     grid-template-columns:150px 1fr;
+    */
+    /* grid-template:
+        [start] 'header header' 100px [row2] [row2] 'side content' 1fr [row-end] / 150px fr; */
+    /* ................................... */
     grid-template-columns: 150px 1fr;
     grid-template-rows: 100px 1fr;
-    grid-template-areas:'header header'
-                        'side content';
-                        /* схематически нарисовали и задали для как переменные назвали */
+    grid-template-areas: 'header header'
+        'side content';
+    /* схематично намалювали та розташували по назвам, які привласнюємо грід елементам через  grid-area */
+    /*     grid-template-areas: 'header header' - шапка займає 2 колонки
+                                'side content'; - сайд зліва, контент зправа 
+ */
 }
 
 .grid-header,
 .grid-aside,
-.grid-content{
+.grid-content {
     padding: 30px;
     border: 2px dashed rgba(255, 255, 255, 0.2);
-    margin: 0px,0px,15px,0px;
+    margin: 0px, 0px, 15px, 0px;
 }
 
-.grid-header{
+.grid-header {
+    /* привласнюємо шапці назву header */
     grid-area: header;
 }
-.grid-aside{
+
+.grid-aside {
+    /* привласнюємо сайдбару назву side */
     grid-area: side;
-    /* название переменной */
 }
 
-.grid-content{
+.grid-content {
+    /* привласнюємо контенту назву content */
     grid-area: content;
 }
 
-.grid__auto{
+/* ...................................... */
+.grid__auto {
     display: grid;
     grid-template: 1fr 1fr / repeat(3, 1fr);
+    /* 7ряд виходить за сітку, у неявній сітці */
+    /* задає розміри для елементів неявної сітки */
     grid-auto-rows: 200px;
-    /* 7ряд не явный, а это размер неявного */
     grid-auto-columns: 200px;
+    /*автоматичне розташування неявних клкментыв */
+    grid-auto-flow: dense;
 }
 
-.grid__auto__item{
+.grid__auto__item {
     text-align: center;
     border: 2px dashed rgba(255, 255, 255, 0.2);
     padding: 30px;
@@ -129,64 +170,103 @@ body {
 }
 
 /* размещениеэлементов с помощью линий сетки */
-.grid__bodyy{
+/* .grid__bodyy {
     height: 500px;
     display: grid;
-    /* grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr); */
-    /*  row2 и  col2 названия линий*/
-grid-template-rows: [start] 1fr [row2] 1fr [row-end];
-grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
-/* выравнивание строки и колонок, тоесть икс и икрик */
-justify-items: start;
-align-items: start;
-/* расстояние между ячейками */
-row-gap: 0px;
-column-gap: 0px;
-/* gap:20px и для строк и для стольцов */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+     row2 и  col2 названия линий
+    grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+    grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+    выравнивание строки и колонок, тоесть икс и икрик
+
+    за замовчуванням вони розширяються на всю доступну довжину ячейки, але якщо задати старт, або енд, то данні ячейки займуть потрібну сторону, а розмір буде по контенту, але сітка залишиться.
+    justify-items: start;
+    align-items: start;
+    расстояние между ячейками
+    row-gap: 0px;
+    column-gap: 0px;
+    gap:20px и для строк и для стольцов
+} */
+.grid__bodyy {
+    display: grid;
+    grid-template: repeat(2, 1fr)/ repeat(3, 1fr);
 }
-.grid__item1{
-    /* auto по умолчанию */
+
+.grid__items {
+    text-align: center;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 30px;
+}
+
+.grid__item1 {
+    /* розміщення обєектів пл лініям */
+    /* auto за замовчуванням */
     /* расширяется ячейка занимая следующую */
-/* grid-row-start: 1;
-grid-row-end: 3;
-grid-column-start: 1;
-grid-column-end: 3; */
-/* если задть начальную строку другую или столбец, и не задавать конечную, то она сместиться*/
-/* grid-row-start: span 2; */
-/* будет занимать 2 ряда */
-/* grid-column-start: 1;
-grid-column-end: 3; */
-/* используется название строки */
-/* grid-row-start: row2; */
-/* также можно исполтзовать короткую запись */
-/* grid-row: 1/3; */
-/* or */
-grid-row: start/row-end;
-grid-column: 1/2;
+    /* grid-row-start починається с першої строки grid-row-end а закінчується другою,
+    але якщо задати 3 в кінці, то ячейка буде займати 3 строки, тобіш: першу- верхню, другу -нижню тіїє ж ячейки, 3 - наступну лінію 
+    з колонками так само*/
+    /* 
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3; */
 
-background-color: red;
-border: 2px dashed yellow;
+    /* якщо написати початкову строку або стовбець іншу та не задавать кінцеву, то ячейка зміститься
+        grid-row-start: 2; - почне з 2 2 ряда
+        grid-column-start: 3; - та з третьої колонки
+*/
+    /* або можна таким чином скороченим написати, щоб ячейка займала більше колонок або строк */
+    /* саме цей айтем буде займати 2 колонки і 2 ряда 
+    grid-row: span 2;
+    grid-column span 2*/
+
+
+
+    /* використовується назва строки, яка була раніше задана у grid-template-rows */
+    /* grid-row-start: row2; */
+    /* grid-column-start:col2; */
+    /* також можна використовувати короткий запис */
+    /* через слеш початкове та кінцева значення, тобіш start/end */
+    /* grid-row: 1/3; */
+    /* or */
+    /* grid-row: start/row-end; */
+    /* з колонками також */
+    /* grid-column: 1/2; */
+
+    background-color: red;
+    border: 2px dashed yellow;
+
+}
+
+.grid__item2 {
+    border: 2px dashed yellow;
+    /* становиться на місце п'ятого, працює як у флекс */
+    order: 5
+}
+
+.grid__item3 {
+    border: 2px dashed yellow;
+    /* вирівнювання конкретної ячейки */
+    align-self: start;
+    justify-self: start;
+    /* place-self об'єднає 2 значення*/
+}
+
+.grid__item4 {
+    border: 2px dashed yellow;
+    /* вирівнює ячейку по центру всередені ячейки */
+    margin: auto;
+
 
 }
 
-.grid__item2{    border: 2px dashed yellow;
-order: 5
-/* становится на место пятого */
-}
-.grid__item3{    border: 2px dashed yellow;
-    /* нужны для личного выравнивания ячейки */
-align-self: start;
-justify-self: start;
-/* place-self обїеденяет 2 значения*/
-}
-.grid__item4{    border: 2px dashed yellow;
+.grid__item5 {
+    border: 2px dashed yellow;
 
 }
-.grid__item5{    border: 2px dashed yellow;
 
-}
-.grid__item6{
+.grid__item6 {
     border: 2px dashed yellow;
 
 }
