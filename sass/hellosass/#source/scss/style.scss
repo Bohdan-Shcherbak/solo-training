@@ -14,18 +14,26 @@ body {
     color: red;
 }
 
+// переменная
 $fz: 80px;
 
-// переменная
+// визов font-size: $fz;
+
+// шаблон
+
 %tplborder {
     border-bottom: 5px dashed red;
 }
 
-// шаблон
+// визов @extend %tplborder;
 
+// mixin
 @mixin fondz($f) {
     font-size: $f;
 }
+
+// визов @include fondz(100px);
+
 
 .block {
     width: 300px / 960px * 100%;

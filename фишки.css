@@ -1,0 +1,39 @@
+/* Поставити картинку справа та центрувати її по висоті  */
+.The-Backstage__container {
+    position: relative;
+}
+
+.The-Backstage__container::before {
+    content: '';
+    position: absolute;
+    background-image: url(../images/flower_foto1.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    right: 0;
+    /* ширину по контейнеру */
+    width: 16.666%;
+    border: 1px solid red;
+    /* ділимо висоту картинки на ширину контейнера */
+    padding-top: 50.42%;
+    top: 50%;
+    /* відступ направо і вверх своєї висоти */
+    transform: translate(90%, -50%);
+
+}
+
+
+/* Використання від'ємного маржина */
+.exfmple__items {
+    display: flex;
+    /* розмір сумарного відступу */
+    row-gap: 24px;
+    /* від'ємний маржин, щоб зробити контейнер більше, який дорівнює половині відступу */
+    margin: 0px -12px;
+}
+
+.exfmple__item {
+    /* від кожного айтему зліва і зправа половину сумарного відступу */
+    padding: 0px 12px;
+    flex: 1 1 33.333%;
+}
